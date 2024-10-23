@@ -1,0 +1,48 @@
+---
+const SHORTCUTS = [
+    "Brands",
+    "Deals",
+    "New",
+    "Men",
+    "Women",
+    "Kids",
+    "Sneakers",
+    "Shoes",
+    "Apparel",
+    "Accessories",
+    "More Categories",
+];
+---
+
+<div class="flex justify-center items-center gap-x-4 bg-secondary p-3">
+    {
+        SHORTCUTS.map((shortcut) => (
+            <a href="#" class="text-white text-xl font-medium">
+                {shortcut}
+            </a>
+        ))
+    }
+</div>
+
+<style scoped>
+    a {
+        position: relative;
+    }
+
+    a::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        bottom: -12px;
+        width: 0;
+        height: 3px;
+        background-color: white;
+        transition: all 0.2s ease-in-out;
+        transform: translateX(-50%);
+    }
+
+    a:hover::after {
+        width: 120%;
+    }
+</style>

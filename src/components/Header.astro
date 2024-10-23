@@ -1,3 +1,63 @@
-<header class="flex items-center justify-around">
+---
+import Bell from "@icons/Bell.astro";
+import Search from "@icons/Search.astro";
+import StockXLogo from "@icons/StockXLogo.astro";
+import Button from "@ui/Button.astro";
+
+const NAV_ITEMS = [
+    {
+        label: "News",
+        href: "#" ,
+    },
+    {
+        label: "About", 
+        href: "#",
+    },
+    {
+        label: "Help",
+        href: "#"
+    },
+    {
+        label: "Sell",
+        href: "#"
+    }
+
     
+]
+
+---
+
+<header class="flex items-center px-10 py-6 gap-x-10 border-b border-[#5f5f5f]">
+    <a href="/"><StockXLogo class="w-auto h-6 fill-[#95c0a4]" /></a>
+    <search class="flex-grow">
+        <form class="flex items-center gap-x-3 bg-secondary rounded-lg border border-[#5f5f5f] p-2.5 w-full transition-colors duration-200 hover:border-white ">
+            <Search class="size-5" />
+            <input
+                class="bg-secondary text-white placeholder-white w-full outline-none"
+                placeholder="Search for brand, color, etc."
+            >
+        </form>
+    </search>
+
+    <div class="flex items-center gap-x-4">
+        <ul class="flex items-center gap-x-4 font-medium">
+            {NAV_ITEMS.map((item) => (
+                <li>
+                    <a href={item.href}>{item.label}</a>
+                </li>
+            ))}
+        </ul>
+
+        <Bell class="size-7 cursor-pointer" />
+
+        <Button class="border border-white text-white font-semibold hover:bg-white hover:text-black">
+            Login
+        </Button>
+
+        <Button class="bg-white text-black font-semibold " >
+            Sign Up
+        </Button>
+
+    </div>
+
 </header>
