@@ -1,24 +1,57 @@
 ---
 const SHORTCUTS = [
-    "Brands",
-    "Deals",
-    "New",
-    "Men",
-    "Women",
-    "Kids",
-    "Sneakers",
-    "Shoes",
-    "Apparel",
-    "Accessories",
-    "More Categories",
+    {
+        label: "Brands",
+        href: "https://stockx.com/brands",
+    },
+    {
+        label: "Deals",
+        href: "/",
+    },
+    {
+        label: "New",
+        href: "https://stockx.com/category/sneakers",
+    },
+    {
+        label: "Men",
+        href: "https://stockx.com/men",
+    },	
+    {
+        label: "Women",
+        href: "https://stockx.com/women",
+    },
+    {
+        label: "Kids",
+        href: "https://stockx.com/kids",
+    },
+    {
+        label: "Sneakers",
+        href: "https://stockx.com/category/sneakers",
+    },
+    {
+        label: "Shoes",
+        href: "https://stockx.com/category/shoes",
+    },
+    {
+        label: "Apparel",
+        href: "https://stockx.com/category/apparel",
+    },
+    {
+        label: "Accessories",
+        href: "https://stockx.com/category/accessories",
+    },
+    {
+        label: "More Categories",
+        href: "https://stockx.com/category/collectibles",
+    }
 ];
 ---
 
 <div class=" justify-center items-center gap-x-4 bg-secondary p-3 hidden lg:flex">
     {
-        SHORTCUTS.map((shortcut) => (
-            <a href="#" class="text-white text-xl font-medium">
-                {shortcut}
+        SHORTCUTS.map(({label, href}) => (
+            <a href={href} class="text-white text-xl font-medium">
+                {label}
             </a>
         ))
     }
