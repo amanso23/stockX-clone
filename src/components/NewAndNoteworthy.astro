@@ -1,0 +1,69 @@
+---
+import type { Article } from "src/types";
+import SectionContainer from "./SectionContainer.astro";
+import Card from "@ui/Card.astro";
+
+const NEW_AND_NOTEWORTHY_ARTICLES: Article[] = [
+    {
+        src: "https://images.stockx.com/images/adidas-Campus-00s-Grey-White-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&q=60&dpr=1&trim=color&updated_at=1683626054",
+        href: "https://stockx.com/adidas-campus-00s-grey-white",
+        title: "adidas Campus 00s Grey White",
+        subtitle: "Lowest Ask",
+        price: "€74",
+        badgeType: "Xpress Ship"
+    },
+    {
+        src: "https://images.stockx.com/images/Nike-Dunk-Low-Photon-Dust-W-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&q=60&dpr=1&trim=color&updated_at=1620404906",
+        href: "https://stockx.com/nike-dunk-low-photon-dust-w",
+        title: "Nike Dunk Low Photon Dust (W)",
+        subtitle: "Lowest Ask",
+        price: "€87",
+        badgeType: "Xpress Ship"
+    },
+    {
+        src: "https://images.stockx.com/images/Nike-Air-Force-1-Low-White-07_V2-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&q=60&dpr=1&trim=color&updated_at=1631122839",
+        href: "https://stockx.com/nike-air-force-1-low-white-07",
+        title: "Nike Air Force 1 Low White  '07",
+        subtitle: "Lowest Ask",
+        price: "€82",
+        badgeType: "Xpress Ship"
+    },
+    {
+        src: "https://images.stockx.com/images/ASICS-Gel-Kayano-121-Kith-Cream-Sage.jpg?fit=fill&bg=FFFFFF&w=140&h=75&q=60&dpr=1&trim=color&updated_at=1729483751",
+        href: "https://stockx.com/asics-gel-kayano-121-kith-cream-sage",
+        title: "ASICS Gel-Kayano 121 Kith Cream Sage",
+        subtitle: "Lowest Ask",
+        price: "€251",
+        badgeType: "Last Sale: €232" 
+    },
+    {
+        src: "https://images.stockx.com/images/Sp5der-OG-Tree-Camo-Hoodie-Red.jpg?fit=fill&bg=FFFFFF&w=140&h=75&q=60&dpr=1&trim=color&updated_at=1729271639",
+        href: "https://stockx.com/sp5der-og-tree-camo-hoodie-red",
+        title: "Sp5der OG Tree Camo Hoodie Red",
+        subtitle: "Lowest Ask",
+        price: "€85",
+        badgeType: "Xpress Ship"
+    },
+    {
+        src: "https://images.stockx.com/images/Air-Jordan-4-Retro-Oxidized-Green-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&q=60&dpr=1&trim=color&updated_at=1715871951",
+        href: "https://stockx.com/air-jordan-4-retro-oxidized-green",
+        title: "Air Jordan 4 Retro Oxidized Green",
+        subtitle: "Lowest Ask",
+        price: "€85",
+        badgeType: "Xpress Ship"
+    }
+
+
+] as const
+
+
+---
+
+
+<SectionContainer title="New and Noteworthy" subtitle="'New and Noteworthy' products are fresh to the StockX marketplace and getting attention">
+    <div class="flex flex-wrap gap-x-6 py-6">
+        {NEW_AND_NOTEWORTHY_ARTICLES.map((article) => (
+            <Card article={article} /> 
+        ))}
+    </div>
+</SectionContainer>

@@ -7,8 +7,10 @@ export interface Article {
     badgeType: BadgeType
 }
 
+export type LastSale = `Last Sale: ${string}`
+
 export type BadgeType = 
     | "Xpress Ship"
     | "Sponsored"
-    | "Last Sale: --"
+    | LastSale
 
