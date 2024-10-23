@@ -1,0 +1,62 @@
+---
+import SectionContainer from "./SectionContainer.astro";
+
+const RECOMMENDED_ARTICLES = [
+    {
+        src: "https://images.stockx.com/images/Nike-Air-Force-1-Low-White-07_V2-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&q=60&dpr=1&trim=color&updated_at=1631122839",
+        title: "Nike Air Force 1 Low White  '07",
+        subtitle: "Lowest Ask",
+        price: "€82",
+    },
+    {
+        src: "https://images.stockx.com/images/Nike-Air-Force-1-Low-White-07_V2-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&q=60&dpr=1&trim=color&updated_at=1631122839",
+        title: "Nike Air Force 1 Low White '07",
+        subtitle: "Lowest Ask",
+        price: "€82",
+    },
+    {
+        src: "https://images.stockx.com/images/Nike-Air-Force-1-Low-White-07_V2-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&q=60&dpr=1&trim=color&updated_at=1631122839",
+        title: "Nike Air Force 1 Low White '07",
+        subtitle: "Lowest Ask",
+        price: "€82",
+    },
+    {
+        src: "https://images.stockx.com/images/Nike-Air-Force-1-Low-White-07_V2-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&q=60&dpr=1&trim=color&updated_at=1631122839",
+        title: "Nike Air Force 1 Low White '07",
+        subtitle: "Lowest Ask",
+        price: "€82",
+    },
+    {
+        src: "https://images.stockx.com/images/Nike-Air-Force-1-Low-White-07_V2-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&q=60&dpr=1&trim=color&updated_at=1631122839",
+        title: "Nike Air Force 1 Low White '07",
+        subtitle: "Lowest Ask",
+        price: "€82",
+    },
+    {
+        src: "https://images.stockx.com/images/Nike-Air-Force-1-Low-White-07_V2-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&q=60&dpr=1&trim=color&updated_at=1631122839",
+        title: "Nike Air Force 1 Low White '07",
+        subtitle: "Lowest Ask",
+        price: "€82",
+    },
+
+]
+
+const subtitle = "These products are inspired by your previous browsing history."
+
+---
+
+<SectionContainer title="Recommended For You" subtitle={subtitle}>
+    <div class="flex flex-wrap gap-x-6 py-6">
+        {RECOMMENDED_ARTICLES.map((article) => (
+            <div class="flex flex-col items-start gap-y-1 max-w-48">
+                <div class="bg-white rounded-2xl p-4">
+                    <img src={article.src} alt={article.title} class="w-40 h-20 object-cover" />
+                </div>
+                <h1 class="text-sm text-left">{article.title}</h1>
+                <h2 class="text-left text-xs">{article.subtitle}</h2>
+                <h3 class="text-xl font-bold">{article.price}</h3>
+            </div>
+        ))}
+    </div>
+    
+</SectionContainer>

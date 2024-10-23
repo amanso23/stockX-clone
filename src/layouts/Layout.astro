@@ -1,6 +1,7 @@
 ---
 
 import Footer from "@components/Footer.astro";
+import HeroSection from "@components/HeroSection.astro";
 
 interface Props {
 	title: string;
@@ -19,14 +20,19 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="flex flex-col justify-between  min-h-screen">
-		<main>
+	<body class="flex flex-col justify-between gap-y-8 h-screen">
+		<HeroSection />
+		<main class="flex flex-col gap-y-6 max-w-7xl m-auto">
 			<slot />
 		</main>
 		<Footer />
 	</body>
 </html>
 <style is:global>
+	html{
+		margin: 0;
+
+	}
 	body {
 		color: white;
 		background-color: #121212;

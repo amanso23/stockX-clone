@@ -1,13 +1,18 @@
 ---
-
 const CAROUSEL_IMAGES = [
-
-]
-
+    {
+        src: "images/carousel-image-1.webp",
+        href: "#",
+    },
+];
 ---
 
-
-<div class="max-w-7xl m-auto h-10 border rounded-lg">
-
-
+<div class="flex relative rounded-lg">
+    {
+        CAROUSEL_IMAGES.map(({ src, href }) => (
+            <a href={href} class="w-full">
+                <img src={src} class="w-full h-auto object-cover rounded-2xl" />
+            </a>
+        ))
+    }
 </div>
