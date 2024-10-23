@@ -4,7 +4,7 @@ import ToolTip from './ui/ToolTip.astro'
 
 interface Props {
     title: string
-    subtitle: string
+    subtitle?: string
 }
 
 const { title, subtitle } = Astro.props   
@@ -14,10 +14,10 @@ const { title, subtitle } = Astro.props
 <section class="flex flex-col  flex-wrap gap-x-4">
     <div class="flex items-center gap-x-1 self-start">
         <h1 class="font-medium text-lg">{title}</h1>
-        <span class="relative group">
+        {subtitle && <span class="relative group">
             <Info class="size-5 cursor-pointer" />
             <ToolTip toolTipMessage={subtitle} />
-        </span>
+        </span> }
     </div>
     <slot />
 </section>

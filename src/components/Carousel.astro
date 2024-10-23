@@ -1,18 +1,97 @@
 ---
+import ArrowLeft from "@icons/ArrowLeft.astro"
+import ArrowRight from "@icons/ArrowRight.astro"
+
 const CAROUSEL_IMAGES = [
     {
         src: "images/carousel-image-1.webp",
         href: "#",
     },
-];
+    {
+        src: "images/carousel-image-2.webp",
+        href: "#",
+    },
+    {
+        src: "images/carousel-image-3.webp",
+        href: "#",
+    }   
+]
 ---
 
-<div class="flex relative rounded-lg">
+<div class=" relative rounded-lg carousel">
     {
-        CAROUSEL_IMAGES.map(({ src, href }) => (
-            <a href={href} class="w-full">
-                <img src={src} class="w-full h-auto object-cover rounded-2xl" />
-            </a>
-        ))
+      CAROUSEL_IMAGES.map(({ src, href }, index) => (
+          <a href={href} class="w-full">
+            <img src={src} class="w-full h-auto object-cover rounded-2xl carousel-image" />
+          </a>
+  
+      ))
     }
+
+    <button class="prev-button absolute top-1/2 left-8 transform -translate-y-1/2 p-3 bg-white rounded-full flex items-center " >
+        <ArrowLeft class="size-3 text-black">
+    </button>
+
+    <button class="next-button absolute top-1/2 right-8 transform -translate-y-1/2 p-3 bg-white rounded-full flex items-center ">
+      <ArrowRight class="size-3 text-black">
+    </button>
 </div>
+
+
+<script>
+  let currentIndex = 0
+
+  const images = document.querySelectorAll('.carousel img')
+  const prevButton: HTMLButtonElement  = document.querySelector('.carousel .prev-button') as HTMLButtonElement
+  const nextButton: HTMLButtonElement = document.querySelector('.carousel .next-button') as HTMLButtonElement
+
+  function showImage(index: number) {
+    images.forEach((image, i) => {
+      (image as HTMLImageElement).style.display = i === index ? 'block' : 'none'
+    })
+  }
+
+  function disableButton(button: HTMLButtonElement, disabled: boolean) {
+    button.disabled = disabled
+    button.style.backgroundColor = disabled ? '#393939' : 'white'
+  }
+
+  prevButton?.addEventListener('click', () => {
+    const prevIndex = currentIndex - 1
+    if (prevIndex < 0) {
+      disableButton(prevButton, true)
+    } else {
+      currentIndex = prevIndex
+      showImage(currentIndex)
+      disableButton(nextButton, false)
+    }
+    disableButton(prevButton, currentIndex === 0)
+  })
+
+  nextButton?.addEventListener('click', () => {
+    const nextIndex = currentIndex + 1
+    if (nextIndex >= images.length) {
+      disableButton(nextButton, true)
+    } else {
+      currentIndex = nextIndex
+      showImage(currentIndex)
+      disableButton(prevButton, false)
+    }
+    disableButton(nextButton, currentIndex === images.length - 1)
+  })
+
+  if (currentIndex === 0) {
+    disableButton(prevButton, true)
+  }
+
+  showImage(currentIndex)
+
+</script>
+
+<style scoped>
+
+  .carousel-image {
+    display: none;
+    animation: fadeIn 0.5s;
+  }
+</style>
