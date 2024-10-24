@@ -7,7 +7,6 @@ export default {
 				secondary: "#282825"
 			}
 			
-			
 		},
 	},
 	plugins: [],
