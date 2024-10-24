@@ -2,6 +2,7 @@
 
 import Footer from "@components/Footer.astro";
 import HeroSection from "@components/HeroSection.astro";
+import PreFooter from "@components/PreFooter.astro";
 
 interface Props {
 	title: string;
@@ -25,6 +26,7 @@ const { title } = Astro.props;
 		<main class="flex flex-col max-w-7xl gap-y-6 m-3 xl:m-auto ">
 			<slot />
 		</main>
+		<PreFooter />
 		<Footer />
 	</body>
 </html>
