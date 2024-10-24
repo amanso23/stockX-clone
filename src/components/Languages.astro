@@ -1,0 +1,70 @@
+---
+
+const LANGUAGES = [
+    {
+        label: "English (US)",
+        href: "https://stockx.com"
+        
+    },
+    {
+        label: "English (UK)",
+        href: "https://stockx.com"
+    },
+    {
+        label: "Italiano",
+        href: "https://stockx.com"
+    },
+    {
+        label: "Deutsch",
+        href: "https://stockx.com"
+    },
+    {
+        label: "Français(FR)",
+        href: "https://stockx.com"
+    },
+    {
+        label: "简体中文",
+        href: "https://stockx.com"
+    },
+    {
+        label: "繁體中文",
+        href: "https://stockx.com"
+    },
+    {
+        label: "日本語",
+        href: "https://stockx.com"
+    },
+    {
+        label: "한국어",
+        href: "https://stockx.com"
+    },
+    {
+        label: "Español(MX)",
+        href: "https://stockx.com"
+    },
+    {
+        label: "Español(US)",
+        href: "https://stockx.com"
+    },
+    {
+        label: "Español(ES)",
+        href: "https://stockx.com"
+    }
+    
+
+]
+
+
+---
+
+<div class="text-xs p-4">
+    <ul class="flex items-center flex-wrap gap-3 justify-center">
+        {LANGUAGES.map(({label, href}) => (
+            <li>
+                <a href={href}>
+                    {label}
+                </a>
+            </li>
+        ))}
+
+</div>

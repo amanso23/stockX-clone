@@ -1,0 +1,46 @@
+---
+const ABOUT_ELEMENTS = [
+    {
+        label: "Terms",
+        href: "https://stockx.com/terms"
+    },
+    {
+        label: "Privacy",
+        href: "https://stockx.com/privacy"
+    },
+    {
+        label: "YourPrivacyChoices",
+        href: "https://stockx.com/privacy-choices"
+    },
+    
+]
+---
+
+
+<ul class="flex items-center gap-x-3">
+    {ABOUT_ELEMENTS.map(({label, href}) => (
+        <li>
+            <a href={href} class="text-black text-xs">
+                {label}
+            </a>
+        </li>
+    ))}
+
+</ul>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const currentYear = new Date().getFullYear();
+        const footer = document.querySelector('footer');
+        const ul = footer?.querySelector('ul');
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = "https://stockx.com/news";
+        a.textContent = `©${currentYear} StockX. All Rights Reserved`;
+        a.classList.add('text-black', 'text-xs');
+        li.appendChild(a);
+        ul?.appendChild(li);
+    });
+
+</script>
