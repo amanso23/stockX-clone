@@ -1,8 +1,41 @@
 ---
 import SectionContainer from "@components/SectionContainer.astro";
+import type { SimpleArticle } from "src/types";
+
+
+
+const POPULAR_BRANDS: SimpleArticle[] = [
+    {
+        src: "https://images-cs.stockx.com/v3/assets/blt818b0c67cf450811/blt55e4fa6810703fbf/6705829db68cd6020959995b/1.png?auto=webp&format=pjpg&width=234&height=160&dpr=1&quality=80",
+        href: "https://stockx.com/brands/jordan",
+    },
+    {
+        src: "https://images-cs.stockx.com/v3/assets/blt818b0c67cf450811/blt60aeb698ab94757e/670582c8db188d791d13b975/2.png?auto=webp&format=pjpg&width=234&height=160&dpr=1&quality=80",
+        href: "https://stockx.com/brands/nike",
+    },
+    {
+        src: "https://images-cs.stockx.com/v3/assets/blt818b0c67cf450811/bltd691b1a45c1155dd/670583360be582add8f117fb/3.png?auto=webp&format=pjpg&width=234&height=160&dpr=2&quality=75",
+        href: "https://stockx.com/brands/louis-vuitton",
+    },
+    {
+        src: "https://images-cs.stockx.com/v3/assets/blt818b0c67cf450811/blt866361a73025113a/670583b3815480162945b8c9/5.png?auto=webp&format=pjpg&width=234&height=160&dpr=2&quality=75",
+        href: "https://stockx.com/brands/ugg",
+    },
+    {
+        src: "https://images-cs.stockx.com/v3/assets/blt818b0c67cf450811/blte370c9a5f30bc5e1/670583e07d34a7ca37f2f80c/4.png?auto=webp&format=pjpg&width=234&height=160&dpr=2&quality=75",
+        href: "https://stockx.com/brands/fear-of-god"
+    }
+
+]
 
 ---
 
-<SectionContainer title="Popular Brands" >
-    
+<SectionContainer title="Popular Brands" seeAllHref="https://stockx.com/brands" >
+        {POPULAR_BRANDS.map((article) => (
+            <a href={article.href} >
+                <img src={article.src} alt="Popular Brand" class="w-auto h-40 object-cover rounded-2xl" />
+            </a>
+        ))}
+ 
+
 </SectionContainer>

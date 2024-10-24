@@ -53,9 +53,6 @@ const NEW_AND_NOTEWORTHY_ARTICLES: Article[] = [
         badgeType: "Xpress Ship"
     }
 
-    
-
-
 ] as const
 
 
@@ -63,9 +60,7 @@ const NEW_AND_NOTEWORTHY_ARTICLES: Article[] = [
 
 
 <SectionContainer title="New and Noteworthy" subtitle="'New and Noteworthy' products are fresh to the StockX marketplace and getting attention">
-    <div class="flex flex-wrap gap-x-6 py-6">
-        {NEW_AND_NOTEWORTHY_ARTICLES.map((article) => (
-            <Card article={article} /> 
-        ))}
-    </div>
+    {NEW_AND_NOTEWORTHY_ARTICLES.map((article) => (
+        <Card article={article} /> 
+    ))}
 </SectionContainer>

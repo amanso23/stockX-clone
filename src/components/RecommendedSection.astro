@@ -59,11 +59,8 @@ const subtitle = "These products are inspired by your previous browsing history.
 ---
 
 <SectionContainer title="Recommended For You" subtitle={subtitle}>
-    <div class="flex flex-wrap gap-x-6 py-6">
         {RECOMMENDED_ARTICLES.map((article) => (
             <Card article={article} /> 
         ))}
-    </div>
-    
 </SectionContainer>
 

@@ -1,0 +1,66 @@
+---
+import type { Article } from "src/types";
+import SectionContainer from "@components/SectionContainer.astro";
+import Card from "@ui/Card.astro";
+
+
+const TRENDING_SNEAKERS_ARTICLES: Article[] = [
+    {
+        src: "https://images.stockx.com/images/Nike-Kobe-5-Protro-Ray-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&q=60&dpr=1&trim=color&updated_at=1729708399",
+        href: "https://stockx.com/nike-kobe-5-protro-x-ray",
+        title: "Nike Kobe 5 Protro X-Ray",
+        subtitle: "Lowest Ask",
+        price: "€232",
+        badgeType: "Xpress Ship"
+    },
+    {
+        src: "https://images.stockx.com/images/Air-Jordan-4-Retro-White-Thunder-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&q=57&dpr=2&trim=color&updated_at=1722353047",
+        href: "https://stockx.com/air-jordan-4-retro-white-thunder",
+        title: "Air Jordan 4 Retro White Thunder",
+        subtitle: "Lowest Ask",
+        price: "€244",
+        badgeType: "Xpress Ship"
+    },
+    {
+        src: "https://images.stockx.com/images/Air-Jordan-1-Retro-Low-OG-SP-Medium-Olive-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&q=57&dpr=2&trim=color&updated_at=1725369968",
+        href: "https://stockx.com/air-jordan-1-retro-low-og-sp-medium-olive",
+        title: "Air Jordan 1 Retro Low OG SP Medium Olive",
+        subtitle: "Lowest Ask",
+        price: "€335",
+        badgeType: "Xpress Ship"
+    },
+    {
+        src: "https://images.stockx.com/images/Air-Jordan-4-Retro-OG-SP-A-Ma-Maniere-While-You-Were-Sleeping-Womens-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&q=60&dpr=1&trim=color&updated_at=1725381306",
+        href: "https://stockx.com/air-jordan-4-retro-og-sp-a-ma-maniere-while-you-were-sleeping-womens",
+        title: "Air Jordan 4 Retro OG SP A Ma Maniere While You Were Sleeping (Womens)",
+        subtitle: "Lowest Ask",
+        price: "€226",
+        badgeType: "Xpress Ship"
+    },
+    {
+        src: "https://images.stockx.com/images/Air-Jordan-1-Retro-Low-OG-Howard-University-PE-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&q=57&dpr=2&trim=color&updated_at=1726684186",
+        href: "https://stockx.com/air-jordan-1-retro-low-og-howard-university-pe",
+        title: "Air Jordan 1 Retro Low OG Howard University PE",
+        subtitle: "Lowest Ask",
+        price: "€107",
+        badgeType: "Xpress Ship"
+    },
+    {
+        src: "https://images.stockx.com/images/Air-Jordan-1-Retro-Low-OG-Mocha-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&q=60&dpr=1&trim=color&updated_at=1724418456",
+        href: "https://stockx.com/air-jordan-1-retro-low-og-mocha",
+        title: "Air Jordan 1 Retro Low OG Mocha",
+        subtitle: "Lowest Ask",
+        price: "€127",
+        badgeType: "Xpress Ship"
+    }
+]
+
+---
+
+
+<SectionContainer title="Trending Sneakers" subtitle="Trending' products are a curated collection of our best selling items">
+    {TRENDING_SNEAKERS_ARTICLES.map((article) => (
+        <Card {article} />
+    ))}
+    
+</SectionContainer>

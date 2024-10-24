@@ -1,3 +1,5 @@
+import type { JSX } from "astro/jsx-runtime"
+
 export interface Article {
     src: string
     href: string
@@ -13,4 +15,9 @@ export type BadgeType =
     | "Xpress Ship"
     | "Sponsored"
     | LastSale
+
+export interface SimpleArticle {
+    src: string
+    href: string
+}
 
