@@ -3,11 +3,13 @@ import Social from "@components/Social.astro";
 import SettingsButton from "@components/SettingsButton.astro";
 import Languages from "@components/Languages.astro";
 import About from "@components/About.astro";
+import PreFooter from "./PreFooter.astro";
 ---
 
 
-<footer class="flex flex-col bg-white p-4 text-black">
-    <div class="flex flex-col gap-3 md:gap-0 md:flex-row items-center justify-around">
+<footer class="flex flex-col text-black">
+    <PreFooter />
+    <div class="flex flex-col gap-3 md:gap-0 md:flex-row items-center justify-around bg-white p-4">
         <SettingsButton />
         <Social />
         <About />
