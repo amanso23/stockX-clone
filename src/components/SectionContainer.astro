@@ -5,25 +5,31 @@ import ToolTip from '@ui/ToolTip.astro'
 interface Props {
     title: string
     subtitle?: string,
-    seeAllHref?: string
+    link? : {
+        label: string,
+        href: string
+    }
+    titleClass?: string
+    labelClass?: string
 }
 
-const { title, subtitle, seeAllHref } = Astro.props   
+const { title, subtitle, link, titleClass, labelClass } = Astro.props 
+const { label, href } = link || {}
 
 ---
 
 <section class="flex flex-col flex-wrap">
     <div class="flex items-center xl:justify-between gap-x-2">
         <div class="flex items-center gap-x-1 ">
-            <h1 class="font-medium text-xl ">{title}</h1>
+            <h1 class:list={["font-medium", titleClass]}>{title}</h1>
             {subtitle && <span class="relative group">
                 <Info class="size-5 cursor-pointer" />
                 <ToolTip toolTipMessage={subtitle} />
             </span> }
         </div>
-        {seeAllHref && <a href={seeAllHref} class="text-sm font-bold text-[#95c0a4] rounded-full px-2 py-1.5 transition-colors duration-300 hover:bg-[#393939] ">See All →</a>}
+        {link && <a href={href} class:list={[" font-bold text-[#95c0a4] rounded-full px-2 py-1.5 transition-colors duration-300 hover:bg-[#393939] hidden md:block", labelClass]}>{label}</a>}
     </div>
-    <div class="flex flex-row  flex-wrap gap-6 py-6">
+    <div class="flex flex-row flex-wrap gap-6 py-6">
         <slot />
     </div>
 </section>

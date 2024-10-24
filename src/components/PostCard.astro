@@ -1,0 +1,24 @@
+---
+import type { Post } from 'src/types'
+
+interface Props {
+    post: Post
+}
+
+const { post } = Astro.props
+
+const { 
+    title, 
+    href, 
+    src, 
+    date } = post
+---
+
+<a href={href} class="w-full md:w-[302px] gap-x-4 md:min-h-[284px] flex md:flex-col border-b-[0.1px] border-[#393939] md:border-none">
+    <img src={src} alt={title} class="w-auto h-[132px] md:w-[302px] md:h-[178px] object-cover rounded-t-2xl pb-3 md:pb-0" />
+    <div class="flex flex-col justify-between flex-grow p-3 gap-y-4 rounded-b-2xl md:bg-[#242424]">
+        <h1 class="text-lg font-bold">{title}</h1>
+        <p class="text-[#cfcfcf]">•{date}</p>
+    </div>
+    
+</a>

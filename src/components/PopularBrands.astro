@@ -24,13 +24,18 @@ const POPULAR_BRANDS: SimpleArticle[] = [
     {
         src: "https://images-cs.stockx.com/v3/assets/blt818b0c67cf450811/blte370c9a5f30bc5e1/670583e07d34a7ca37f2f80c/4.png?auto=webp&format=pjpg&width=234&height=160&dpr=2&quality=75",
         href: "https://stockx.com/brands/fear-of-god"
-    }
+    },
 
 ]
+    const link = {
+        href: "https://stockx.com/brands",
+        label: "See All →",
+    }
+
 
 ---
 
-<SectionContainer title="Popular Brands" seeAllHref="https://stockx.com/brands" >
+<SectionContainer title="Popular Brands" link={link} titleClass="text-xl" >
         {POPULAR_BRANDS.map((article) => (
             <a href={article.href} >
                 <img src={article.src} alt="Popular Brand" class="w-auto h-40 object-cover rounded-2xl" />

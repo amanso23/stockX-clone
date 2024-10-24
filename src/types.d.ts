@@ -38,3 +38,11 @@ export interface InfoArticle {
     href: string
 
 }
+
+
+export interface Post {
+    src: string
+    href: string
+    title: string
+    date: `${number}/${number}/${number}`
+}

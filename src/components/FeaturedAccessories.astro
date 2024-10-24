@@ -56,10 +56,15 @@ const FEATURED_ACCESSORIES_ARTICLES: Article[] = [
 
 ]
 
+    const link = {
+        label: "See All →",
+        href: "https://stockx.com/accessories"
+    }
+
 
 ---
 
-<SectionContainer title="Featured Accessories" subtitle="'Featured' products are a curated collection of our best selling items" seeAllHref="https://stockx.com/accessories">
+<SectionContainer title="Featured Accessories" subtitle="'Featured' products are a curated collection of our best selling items" link={link} titleClass="text-xl">
     {FEATURED_ACCESSORIES_ARTICLES.map((article) => (
         <Card article={article} />
     ))}

@@ -1,11 +1,11 @@
 import type { InfoArticle } from "src/types"
-import InfoCard from "./InfoCard"
+import InfoCard from "@components/InfoCard"
 import Verified from "@icons/Verified.tsx"
 import ShellHeart from "@icons/ShellHeart"
 import Dollar from "@icons/Dollar"
 
 
-const InforCardSection = () => {
+const InfoCardSection = () => {
 
     const ARTICLES: InfoArticle[] = [
         {
@@ -30,7 +30,7 @@ const InforCardSection = () => {
     ]
 
     return (
-        <div className="flex flex-col flex-wrap md:flex-row items-center gap-x-5">
+        <div className="flex flex-col flex-wrap md:flex-row items-center gap-x-5 gap-y-3 mb-8">
             {ARTICLES.map((article) => (
                 <InfoCard  article={article} />
                 
@@ -41,4 +41,4 @@ const InforCardSection = () => {
     )
 }
 
-export default InforCardSection
+export default InfoCardSection

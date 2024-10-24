@@ -1,0 +1,51 @@
+---
+import type { Post } from "src/types";
+import SectionContainer from "@components/SectionContainer.astro";
+import PostCard from "./PostCard.astro";
+import Button from "./ui/Button.astro";
+
+const POSTS: Post[] = [
+    {
+        title: "Create Flex Shipments Faster with Barcode Scanning",
+        href: "https://stockx.com/news/create-flex-shipments-faster-with-barcode-scanning/",
+        src: "https://d15lrsitp7y7u.cloudfront.net/wp-content/uploads/2024/10/Scanning2.png",
+        date: "10/16/2024"
+    },
+    {
+        title: "StockX's Quick Pricing Tools for non-US Sellers",
+        href: "https://stockx.com/news/stockx-announces-new-features-for-sellers/",
+        src: "https://d15lrsitp7y7u.cloudfront.net/wp-content/uploads/2024/10/Blog-Featured-Image-Tempate-V2.png",
+        date: "10/10/2024"
+    },
+    {
+        title: "Jae Tips x Saucony “To-Do List” is Here",
+        href: "https://stockx.com/news/jae-tips-x-saucony-to-do-list/",
+        src: "https://d15lrsitp7y7u.cloudfront.net/wp-content/uploads/2024/09/Blog-Assets-Jae-Tips-ReleaseThumbnail.jpg",
+        date: "09/18/2024"
+    },
+    {
+        title: "Best Collegiate Colorways",
+        href: "https://stockx.com/news/best-collegiate-colorways/",
+        src: "https://d15lrsitp7y7u.cloudfront.net/wp-content/uploads/2024/09/Collegiate-ColorwaysThumbnail.jpg",
+        date: "09/12/2024"
+    }
+]
+
+
+const link = {
+    label: "View All New Articles",
+    href: "https://stockx.com/news"
+}
+---
+
+<SectionContainer title="From The Magazine" titleClass="text-3xl font-normal" labelClass="text-xl font-normal" link={link}>
+    {POSTS.map((post) => (
+        <PostCard post={post} />
+    ))}
+    <a href={link.href} class="w-full">
+        <Button class="w-full rounded-full md:hidden border font-bold text-sm py-1.5 transition duration-200 hover:bg-white hover:text-black">{link.label}</Button> 
+    </a>
+</SectionContainer>
+
+
+
