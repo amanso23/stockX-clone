@@ -1,0 +1,55 @@
+---
+import type { ReleaseArticle } from "src/types"
+import ReleaseCard from "@components/ReleaseCard.astro"
+import SectionContainer from "@components/SectionContainer.astro"
+
+
+const RELEASE_ARTICLES: ReleaseArticle[] = [
+    {
+        src: "https://images.stockx.com/images/adidas-Samba-Millennium-Wales-Bonner-Silver-Metallic-Yellow-Croc.jpg?fit=fill&bg=FFFFFF&w=300&h=214&q=60&dpr=1&trim=color&updated_at=1728189907",
+        href: "https://stockx.com/adidas-samba-millennium-wales-bonner-silver-metallic-yellow-croc",
+        description: "adidas Samba Millennium Wales Bonner Silver Metallic Yellow Croc",
+        date: "Oct | 24"
+    },
+    {
+        src: "https://images.stockx.com/images/New-Balance-Minimus-Trail-Ice-Studios-Pristine.jpg?fit=fill&bg=FFFFFF&w=300&h=214&q=60&dpr=1&trim=color&updated_at=1729607268",
+        href: "https://stockx.com/new-balance-minimus-trail-ice-studios-pristine",
+        description: "New Balance Minimus Trail Ice Studios Pristine",
+        date: "Oct | 24"
+    },
+    {
+        src: "https://images.stockx.com/images/adidas-Samba-Wales-Bonner-Brown-Croc.jpg?fit=fill&bg=FFFFFF&w=300&h=214&q=60&dpr=1&trim=color&updated_at=1728189972",
+        href: "https://stockx.com/adidas-samba-wales-bonner-brown-croc",
+        description: "adidas Samba Wales Bonner Brown Croc",
+        date: "Oct | 24"
+    },
+    {
+        src: "https://images.stockx.com/images/Salomon-XT-6-Neon-Tokyo-Plum-Caspia.jpg?fit=fill&bg=FFFFFF&w=300&h=214&q=60&dpr=1&trim=color&updated_at=1729607275",
+        href: "https://stockx.com/salomon-xt-6-neon-tokyo-plum-caspia",
+        description: "Salomon XT-6 Neon Tokyo Plum Caspia",
+        date: "Oct | 24"
+
+    },
+    {
+        src: "https://images.stockx.com/images/ASICS-UB9-S-Gel-Kayano-20-Kiko-Kostadinov-Vibrant-Yellow.jpg?fit=fill&bg=FFFFFF&w=300&h=214&q=60&dpr=1&trim=color&updated_at=1729607262",
+        href: "https://stockx.com/asics-ub9-s-gel-kayano-20-kiko-kostadinov-vibrant-yellow",
+        description: "ASICS UB9-S Gel-Kayano 20 Kiko Kostadinov Vibrant Yellow",
+        date: "Oct | 24"
+    },
+    {
+        src: "https://images.stockx.com/images/Nike-Air-Force-1-Low-Retro-QS-Halloween-Skull-Product.jpg?fit=fill&bg=FFFFFF&w=300&h=214&q=60&dpr=1&trim=color&updated_at=1729101599",
+        href: "https://stockx.com/nike-air-force-1-low-retro-qs-halloween-skull",
+        description: "Nike Air Force 1 Low Retro QS Halloween Skull",
+        date: "Oct | 24"
+    }
+]
+
+---
+
+<SectionContainer title="Release Calendar">
+    {RELEASE_ARTICLES.map((releaseArticle) => (
+        <ReleaseCard releaseArticle={releaseArticle} />
+    ))}
+</SectionContainer>
+
+

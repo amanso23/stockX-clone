@@ -1,0 +1,45 @@
+---
+import type { SimpleArticle } from "src/types";
+import SectionContainer from "./SectionContainer.astro";
+
+const SEASONAL_FAVORITES: SimpleArticle[] = [
+    {
+        src: "https://images-cs.stockx.com/v3/assets/blt818b0c67cf450811/blt7ed22759ca67f0ad/670585312fa15b00c7800da6/12.png?auto=webp&format=pjpg&width=234&height=160&dpr=1&quality=80",
+        href: "https://stockx.com/category/apparel/tops/hoodies-and-sweatshirts",
+
+    },
+    {
+        src: "https://images-cs.stockx.com/v3/assets/blt818b0c67cf450811/blt000e924543ab5096/67058660a7992637429b315d/13.png?auto=webp&format=pjpg&width=234&height=160&dpr=1&quality=80",
+        href: "https://stockx.com/category/apparel/outerwear/jackets-and-coats",
+
+    },
+    {
+        src: "https://images-cs.stockx.com/v3/assets/blt818b0c67cf450811/bltca3b28e77e0f855f/67058565db188d678d13b9c6/14.png?auto=webp&format=pjpg&width=234&height=160&dpr=1&quality=80",
+        href: "https://stockx.com/category/accessories/bags?gender=women",
+
+    },
+    {
+        src: "https://images-cs.stockx.com/v3/assets/blt818b0c67cf450811/blte8d8f9626b137cbd/670585c3a79926e26f9b3151/15.png?auto=webp&format=pjpg&width=234&height=160&dpr=2&quality=75",
+        href: "https://stockx.com/category/accessories/watches",
+
+    },
+    {
+        src: "https://images-cs.stockx.com/v3/assets/blt818b0c67cf450811/blte05d67937bea9f5c/67058630b68cd64f185999cb/16.png?auto=webp&format=pjpg&width=234&height=160&dpr=1&quality=80",
+        href: "https://stockx.com/brands/lego",
+
+    },
+]
+
+
+
+
+---
+
+
+<SectionContainer title="Seasonal Favorites" >
+    {SEASONAL_FAVORITES.map((article) => (
+        <a href={article.href} >
+            <img src={article.src} alt="Popular Brand" class="w-auto h-40 object-cover rounded-2xl" />
+        </a>
+    ))}
+</SectionContainer>

@@ -1,0 +1,29 @@
+---
+import Heart from '@icons/Heart.astro';
+import type { ReleaseArticle } from 'src/types';
+
+
+interface Props {
+    releaseArticle: ReleaseArticle;
+}
+
+const { releaseArticle } = Astro.props;
+
+const {
+    src,
+    href,
+    description,
+    date
+} = releaseArticle;
+
+---
+
+
+<a href={href} class="relative flex flex-col border px-4 py-5 rounded-2xl max-w-48 h-64 gap-y-3">
+    <div class="flex items-center justify-between">
+        <h1 class="font-medium text-2xl font-serif">{date}</h1>
+        <Heart class="size-6 text-white heart-icon" />
+    </div>
+    <img src={src} alt="img" class="w-auto h-28 rounded-2xl">
+    <p class="text-wrap leading-[1] truncate">{description}</p>
+</a>

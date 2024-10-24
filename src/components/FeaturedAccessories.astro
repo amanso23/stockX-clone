@@ -1,9 +1,58 @@
 ---
 import type { Article } from "src/types";
 import SectionContainer from "./SectionContainer.astro";
+import Card from "./ui/Card.astro";
 
 
 const FEATURED_ACCESSORIES_ARTICLES: Article[] = [
+    {
+        src: "https://images.stockx.com/images/Stanley-x-Target-x-Wicked-Flowstate-Quencher-40oz-Tumbler-Elphaba.jpg?fit=fill&bg=FFFFFF&w=140&h=75&q=60&dpr=1&trim=color&trimcolor=ffffff&updated_at=1727993328",
+        href: "https://stockx.com/stanley-x-target-x-wicked-flowstate-quencher-40oz-tumbler-elphaba",
+        title: "Stanley x Target x Wicked Flowstate Quencher 40oz Tumbler Elphaba",
+        subtitle: "Lowest Ask",
+        price: "€115",
+        badgeType: "Last Sale: €77",
+    },
+    {
+        src: "https://images.stockx.com/images/Prada-Symbole-Sunglasses-Black-SPR17W-E1AB-F05S0-C-049-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&q=60&dpr=1&trim=color&trimcolor=ffffff&updated_at=1707165176",
+        href: "https://stockx.com/prada-symbole-sunglasses-black-spr17w-e1ab-f05s0-c-049", 
+        title: "Prada Symbole Sunglasses Black SPR17W E1AB F05S0 C 049",
+        subtitle: "Lowest Ask",
+        price: "€200",
+        badgeType: "Xpress Ship",
+    },
+    {
+        src: "https://images.stockx.com/images/Swatch-x-Omega-Bioceramic-Moonswatch-Mission-To-Moonphase-Snoopy-Black-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&q=60&dpr=1&trim=color&updated_at=1713282621",
+        href: "https://stockx.com/swatch-x-omega-bioceramic-moonswatch-mission-to-moonphase-snoopy-black",
+        title: "Swatch x Omega Bioceramic Moonswatch Mission To Moonphase Snoopy Black",
+        subtitle: "Lowest Ask",
+        price: "€367",
+        badgeType: "Xpress Ship",
+    },
+    {
+        src: "https://images.stockx.com/images/Stanley-The-Halloween-Flowstate-Quencher-40oz-Tumbler-Web-Glow.jpg?fit=fill&bg=FFFFFF&w=140&h=75&q=60&dpr=1&trim=color&trimcolor=ffffff&updated_at=1727157655",
+        href: "https://stockx.com/stanley-the-halloween-flowstate-quencher-40oz-tumbler-web-glow",
+        title: "Stanley The Halloween Flowstate Quencher 40oz Tumbler Web Glow",
+        subtitle: "Lowest Ask",
+        price: "€367",
+        badgeType: "Last Sale: €84",
+    },
+    {
+        src: "https://images.stockx.com/images/Sprayground-Shark-Central-Pink-DLXSV-Backpack-Black-Pink.jpg?fit=fill&bg=FFFFFF&w=140&h=75&q=60&dpr=1&trim=color&updated_at=1722995745",
+        href: "https://stockx.com/sprayground-shark-central-pink-dlxsv-backpack-black-pink",
+        title: "Sprayground Shark Central Pink DLXSV Backpack Black Pink",
+        subtitle: "Lowest Ask",
+        price: "€150",
+        badgeType: "Last Sale: €105",
+    },
+    {
+        src: "https://images.stockx.com/images/Stanley-x-Olivia-Rodrigo-Flowstate-Quencher-40oz-Tumbler-Purple.jpg?fit=fill&bg=FFFFFF&w=140&h=75&q=60&dpr=1&trim=color&trimcolor=ffffff&updated_at=1720213308",
+        href: "https://stockx.com/stanley-x-olivia-rodrigo-flowstate-quencher-40oz-tumbler-purple",
+        title: "Stanley x Olivia Rodrigo Flowstate Quencher 40oz Tumbler Purple",
+        subtitle: "Lowest Ask",
+        price: "€97",
+        badgeType: "Xpress Ship",
+    }
 
 ]
 
@@ -11,5 +60,7 @@ const FEATURED_ACCESSORIES_ARTICLES: Article[] = [
 ---
 
 <SectionContainer title="Featured Accessories" subtitle="'Featured' products are a curated collection of our best selling items" seeAllHref="https://stockx.com/accessories">
-
+    {FEATURED_ACCESSORIES_ARTICLES.map((article) => (
+        <Card article={article} />
+    ))}
 </SectionContainer>

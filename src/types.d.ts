@@ -21,3 +21,20 @@ export interface SimpleArticle {
     href: string
 }
 
+export interface ReleaseArticle {
+    src: string
+    href: string
+    description: string
+    date: Date
+}
+
+type Date = `${string} | ${number}`
+
+
+export interface InfoArticle {
+    icon: JSX.Element
+    title: string
+    description: string
+    href: string
+
+}
