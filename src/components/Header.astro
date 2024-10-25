@@ -29,7 +29,7 @@ const NAV_ITEMS = [
 
 ---
 
-<header class="flex items-center justify-between px-3 py-3 md:px-10 md:py-6 md:gap-x-10 border-b border-[#5f5f5f]">
+<header class="flex items-center justify-between px-3 py-2 md:px-10 md:py-6 md:gap-x-10 border-b border-[#5f5f5f]">
     <Menu class="md:hidden size-7 cursor-pointer fill-white hamburguer-menu" />
     <a href="/"><StockXLogo class="w-auto h-5 md:h-6 fill-[#95c0a4] logo" /></a>
     <Search class="md:hidden size-7 cursor-pointer fill-white search-icon" />
@@ -74,12 +74,14 @@ const NAV_ITEMS = [
     const cancel = document.querySelector('.cancel');
     const search = document.querySelector('search');
     const input = search?.querySelector('input');
+    const searchForm = search?.querySelector('form');
     
     searchIcon?.addEventListener('click', () => {
         if(!logo?.classList.contains('hidden')){
             logo?.classList.add('hidden');
             search?.classList.remove('hidden')
             search?.classList.add('px-4')
+            searchForm?.classList.add('p-1')
             input?.focus()
             searchIcon.classList.add('hidden');
             cancel?.classList.remove('hidden');
@@ -97,3 +99,4 @@ const NAV_ITEMS = [
     });
 
 </script>
+
