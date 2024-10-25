@@ -1,5 +1,7 @@
 ---
 import Bell from "@icons/Bell.astro";
+import Cancel from "@icons/Cancel.astro";
+import Menu from "@icons/Menu.astro";
 import Search from "@icons/Search.astro";
 import StockXLogo from "@icons/StockXLogo.astro";
 import Button from "@ui/Button.astro";
@@ -27,20 +29,24 @@ const NAV_ITEMS = [
 
 ---
 
-<header class=" items-center px-10 py-6 gap-x-10 border-b border-[#5f5f5f] hidden lg:flex">
-    <a href="/"><StockXLogo class="w-auto h-6 fill-[#95c0a4]" /></a>
-    <search class="flex-grow">
-        <form class="flex items-center gap-x-3 bg-secondary rounded-lg border border-[#5f5f5f] p-2.5 w-full transition-colors duration-200 hover:border-white ">
-            <Search class="size-5" />
-            <input
-                class="bg-secondary text-white placeholder-white w-full outline-none"
-                placeholder="Search for brand, color, etc."
-            >
+<header class="flex items-center justify-between px-3 py-3 md:px-10 md:py-6 md:gap-x-10 border-b border-[#5f5f5f]">
+    <Menu class="md:hidden size-7 cursor-pointer fill-white hamburguer-menu" />
+    <a href="/"><StockXLogo class="w-auto h-5 md:h-6 fill-[#95c0a4] logo" /></a>
+    <Search class="md:hidden size-7 cursor-pointer fill-white search-icon" />
+    <search class="hidden md:block flex-grow">
+        <form class="flex items-center gap-x-3 bg-secondary rounded-lg border border-[#5f5f5f] p-2.5 w-full transition-colors duration-200 hover:border-white focus-within:border-white focus-within:bg-tertiary">
+          <Search class="size-5" />
+          <input
+            class="bg-secondary text-white placeholder-white w-full outline-none "
+            placeholder="Search for brand, color, etc."
+          >
         </form>
     </search>
+      
+    <Cancel class="hidden size-7 cursor-pointer cancel " />
 
-    <div class="flex items-center gap-x-4">
-        <ul class="flex items-center gap-x-4 font-medium">
+    <div class="hidden md:flex items-center gap-x-1 lg:gap-x-4 text-xs lg:text-base">
+        <ul class="flex items-center gap-x-1 lg:gap-x-4 font-medium">
             {NAV_ITEMS.map((item) => (
                 <li>
                     <a href={item.href}>{item.label}</a>
@@ -50,14 +56,44 @@ const NAV_ITEMS = [
 
         <Bell class="size-7 cursor-pointer" />
 
-        <Button class="border border-white text-white font-semibold hover:bg-white hover:text-black">
+        <Button class="border border-white text-white font-semibold hover:bg-white hover:text-black truncate">
             Login
         </Button>
 
-        <Button class="bg-white text-black font-semibold " >
+        <Button class="bg-white text-black font-semibold truncate " >
             Sign Up
         </Button>
-
     </div>
 
 </header>
+
+<script>
+
+    const searchIcon = document.querySelector('.search-icon');
+    const logo = document.querySelector('.logo');
+    const cancel = document.querySelector('.cancel');
+    const search = document.querySelector('search');
+    const input = search?.querySelector('input');
+    
+    searchIcon?.addEventListener('click', () => {
+        if(!logo?.classList.contains('hidden')){
+            logo?.classList.add('hidden');
+            search?.classList.remove('hidden')
+            search?.classList.add('px-4')
+            input?.focus()
+            searchIcon.classList.add('hidden');
+            cancel?.classList.remove('hidden');
+        }else{
+            logo.classList.remove('hidden');
+        }
+    });
+
+    cancel?.addEventListener('click', () => {
+        cancel?.classList.add('hidden');
+        searchIcon?.classList.remove('hidden');
+        logo?.classList.remove('hidden');
+        search?.classList.add('hidden');
+        search?.classList.remove('px-4');
+    });
+
+</script>

@@ -31,8 +31,8 @@ const InfoCardSection = () => {
 
     return (
         <div className="flex flex-col flex-wrap md:flex-row items-center gap-x-5 gap-y-3 mb-8">
-            {ARTICLES.map((article) => (
-                <InfoCard  article={article} />
+            {ARTICLES.map((article, index) => (
+                <InfoCard  article={article} key={index} />
                 
             ))}
 
